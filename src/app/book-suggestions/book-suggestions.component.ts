@@ -1,18 +1,21 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {BookSuggestionsService} from "./book-suggestions.service";
+import {Book} from "./book.model";
+import {Observable} from "rxjs/Observable";
 
 @Component({
 	selector: 'book-suggestions',
 	templateUrl: './book-suggestions.component.html',
 	styleUrls: ['./book-suggestions.component.css']
 })
-export class BookSuggestionsComponent {
+export class BookSuggestionsComponent implements OnInit {
 
-	books = [
-		{genre: "Sci-Fi", author: "Isaac Asimov", yearOfPublication: 1952, numberOfPages: 1000, rating: 4.5},
-		{genre: "Horror", author: "Stephen King", yearOfPublication: 1980, numberOfPages: 2000, rating: 4.0}
-	];
+	books: Observable<Book[]>;
 
-	constructor() {
+	constructor(private bookSuggestionsService: BookSuggestionsService) {
 	}
 
+	ngOnInit() {
+		this.books = this.bookSuggestionsService.getBookSuggestions();
+	}
 }

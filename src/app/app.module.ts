@@ -1,8 +1,10 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
+import {HttpModule, JsonpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
 import {BookSuggestionsComponent} from "./book-suggestions/book-suggestions.component";
+import {BookSuggestionsService} from "./book-suggestions/book-suggestions.service";
 
 @NgModule({
 	declarations: [
@@ -10,9 +12,11 @@ import {BookSuggestionsComponent} from "./book-suggestions/book-suggestions.comp
 		BookSuggestionsComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		HttpModule,
+		JsonpModule
 	],
-	providers: [],
+	providers: [BookSuggestionsService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {
