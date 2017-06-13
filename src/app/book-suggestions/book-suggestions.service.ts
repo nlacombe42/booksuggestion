@@ -9,11 +9,6 @@ export class BookSuggestionsService {
 
 	private url: string = "http://localhost:8001/v1/books/suggestions";
 
-	private books: Book[] = [
-		{genre: "Sci-Fi", author: "Isaac Asimov", yearOfPublication: 1952, numberOfPages: 1000, rating: 4.5},
-		{genre: "Horror2", author: "Stephen King", yearOfPublication: 1980, numberOfPages: 2000, rating: 4.0}
-	];
-
 	constructor(private http: Http) {
 	}
 
@@ -40,8 +35,6 @@ export class BookSuggestionsService {
 
 	private extractData(res: Response) {
 		let body = res.json();
-
-		console.log('body', body);
 
 		return body.elements || {};
 	}
