@@ -1,0 +1,22 @@
+<div>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Genre</th>
+			<th>Author</th>
+			<th>Year Of Publication</th>
+			<th>Number Of Pages</th>
+			<th>Rating</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr *ngFor="let book of books">
+			<td>{{book.genre}}</td>
+			<td>{{book.author}}</td>
+			<td>{{book.yearOfPublication}}</td>
+			<td>{{book.numberOfPages}}</td>
+			<td>{{book.rating}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
