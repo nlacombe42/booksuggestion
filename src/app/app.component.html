@@ -4,10 +4,11 @@
 	<section class="major-section">
 		<h2>Preferences</h2>
 		<p>Enter your preferences in order of importance:</p>
+		<preferences (preferencesChange)="getSuggestedBooks($event)"></preferences>
 	</section>
 
 	<section class="major-section">
 		<h2>Suggestions</h2>
-		<book-suggestions></book-suggestions>
+		<book-suggestions [books]="books"></book-suggestions>
 	</section>
 </main>

@@ -1,0 +1,27 @@
+<section>
+	<section class="major-section">
+		<section class="major-section">
+			<strong>Add a preference:</strong>
+			<select [(ngModel)]="selectedField" (ngModelChange)="clearFieldValue()">
+				<option *ngFor="let field of fields" [ngValue]="field">{{field.name}}</option>
+			</select>
+			<span *ngIf="selectedField != null">
+				<input *ngIf="selectedField.value !== 'PUBLICATION_ERA'" type="text" [(ngModel)]="fieldValue">
+
+				<select *ngIf="selectedField.value === 'PUBLICATION_ERA'" [(ngModel)]="fieldValue">
+					<option *ngFor="let publicationEra of publicationEras" [ngValue]="publicationEra.value">{{publicationEra.name}}</option>
+				</select>
+			</span>
+			<button [disabled]="selectedField === null || fieldValue === null" (click)="addPreference()">add</button>
+		</section>
+		<button [disabled]="preferences.length === 0" (click)="clearPreference()">Clear preferences</button>
+	</section>
+	<section class="major-section">
+		<span *ngIf="preferencesDisplay.length === 0">No Preferences</span>
+		<ol *ngIf="preferencesDisplay.length > 0">
+			<li *ngFor="let preferenceDisplay of preferencesDisplay"><em>{{preferenceDisplay.displayName}}</em>:
+				{{preferenceDisplay.displayValue}}
+			</li>
+		</ol>
+	</section>
+</section>

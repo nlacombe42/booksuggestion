@@ -1,21 +1,15 @@
-import {Component, OnInit} from "@angular/core";
-import {BookSuggestionsService} from "./book-suggestions.service";
+import {Component, Input} from "@angular/core";
 import {Book} from "./book.model";
-import {Observable} from "rxjs/Observable";
 
 @Component({
 	selector: 'book-suggestions',
 	templateUrl: './book-suggestions.component.html',
 	styleUrls: ['./book-suggestions.component.css']
 })
-export class BookSuggestionsComponent implements OnInit {
+export class BookSuggestionsComponent {
 
-	books: Observable<Book[]>;
+	@Input() books: Book[] = [];
 
-	constructor(private bookSuggestionsService: BookSuggestionsService) {
-	}
-
-	ngOnInit() {
-		this.books = this.bookSuggestionsService.getBookSuggestions();
+	constructor() {
 	}
 }

@@ -12,7 +12,7 @@ export class BookSuggestionsService {
 	constructor(private http: Http) {
 	}
 
-	getBookSuggestions(): Observable<Book[]> {
+	getBookSuggestions(preferences): Observable<Book[]> {
 
 		let headers = new Headers({"Content-Type": "application/json"});
 		let options = new RequestOptions({headers: headers});
@@ -22,10 +22,7 @@ export class BookSuggestionsService {
 				pageNumber: 0,
 				elementsPerPage: 5
 			},
-			orderedPreferenceCriteria: [{
-				field: "GENRE",
-				value: "Sci-Fi"
-			}]
+			orderedPreferenceCriteria: preferences
 		};
 
 		return this.http.post(this.url, requestData, options)
@@ -36,7 +33,7 @@ export class BookSuggestionsService {
 	private extractData(res: Response) {
 		let body = res.json();
 
-		return body.elements || {};
+		return body.elements || [];
 	}
 
 	private handleError(error: Response | any) {

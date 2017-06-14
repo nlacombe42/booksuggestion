@@ -5,16 +5,20 @@ import {HttpModule, JsonpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {BookSuggestionsComponent} from "./book-suggestions/book-suggestions.component";
 import {BookSuggestionsService} from "./book-suggestions/book-suggestions.service";
+import {PreferencesComponent} from "./preferences/preferences.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		BookSuggestionsComponent
+		BookSuggestionsComponent,
+		PreferencesComponent
 	],
 	imports: [
 		BrowserModule,
 		HttpModule,
-		JsonpModule
+		JsonpModule,
+		FormsModule
 	],
 	providers: [BookSuggestionsService],
 	bootstrap: [AppComponent]
