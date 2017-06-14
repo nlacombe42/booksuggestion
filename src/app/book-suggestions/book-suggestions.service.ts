@@ -20,7 +20,7 @@ export class BookSuggestionsService {
 		let requestData = {
 			pageRequest: {
 				pageNumber: 0,
-				elementsPerPage: 5
+				elementsPerPage: 100
 			},
 			orderedPreferenceCriteria: preferences
 		};
