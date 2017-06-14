@@ -1,7 +1,8 @@
 # Booksuggestion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+This project is the front-end of my booksuggestion-ws repo.
 
-## Development server
+## Run
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` then navigate to `http://localhost:4200/`.
+The app will automatically reload if you change any of the source files.
