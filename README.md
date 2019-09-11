@@ -1,6 +1,6 @@
 # Booksuggestion
 
-This project is the front-end of my booksuggestion-ws repo.
+This project is the front-end of my [booksuggestion-ws repo](https://github.com/nlacombe42/booksuggestion-ws).
 
 ## Run
 
